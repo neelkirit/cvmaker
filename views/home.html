@@ -1,0 +1,150 @@
+
+<div class="preload" id="preload-home" ng-hide="isLoadOn">
+   <div class="swiper-container">
+        <div class="swiper-wrapper">
+            
+
+            <div class="swiper-slide deep-orange lighten-3 white-text" href="#one!">
+              <br><br><br>
+                <h2><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+                <p class="white-text big-text" style="padding-left:5%;padding-right: 5%">Build Professional Looking Resumes in just 5 steps!</p>
+            </div>
+
+            <div class="swiper-slide green lighten-2 white-text" href="#two!">
+              <br><br><br>
+                <h2><i class="fa fa-briefcase" aria-hidden="true"></i></h2>
+                <p class="white-text big-text">Recommened by HR of Fortune 500s</p>
+            </div>
+
+            <div class="swiper-slide  deep-purple lighten-2 white-text" href="#three!">
+              <br><br><br>
+                <h2><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+                <p class="white-text big-text">Get 5 steps closer to your Dream Job!</p>
+                <div class=" center" id="make-button">
+                  <a class="btn waves-effect white grey-text darken-text-2" id="" ng-click="submitVibrate();checkPermission();isLoadOn = !isLoadOn">Make</a>
+                </div>
+            </div>
+
+
+            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- <div class="carousel carousel-slider center" data-indicators="false">
+
+      
+
+      <div class="carousel-item deep-orange lighten-3 white-text" href="#one!">
+      <br><br><br>
+        <h2><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+        <p class="white-text">Build Professional Looking Resumes in just 5 steps!</p>
+      </div>
+
+      <div class="carousel-item green lighten-2 white-text" href="#two!">
+      <br><br><br>
+        <h2><i class="fa fa-briefcase" aria-hidden="true"></i></h2>
+        <p class="white-text">Recommened by HR of Fortune 500s</p>
+      </div>
+
+      <div class="carousel-item  deep-purple lighten-2 white-text" href="#three!">
+      <br><br><br>
+        <h2><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+        <p class="white-text">Get 5 steps closer to your Dream Job!</p>
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect white grey-text darken-text-2" id="make-button" ng-click="submitVibrate();checkPermission();isLoadOn = !isLoadOn">Make</a>
+        </div>
+      </div>
+
+      
+    </div> -->
+</div>
+
+<div class="row wrapper form-area" ng-show="isLoadOn" >
+<ul id="progress">
+    
+    <li class="active progress-li">Personal </li>
+    <li class="progress-li"> <i class="fa fa-building-o" aria-hidden="true"></i></li>
+    <li class="progress-li"><i class="fa fa-university" aria-hidden="true"></i></li>
+    <li class="progress-li"><i class="fa fa-graduation-cap" aria-hidden="true"></i></li>
+    <li class="progress-li"><i class="fa fa-cubes" aria-hidden="true"></i></li>
+    <li class="progress-li"><i class="fa fa-trophy" aria-hidden="true"></i></li>
+    <li class="progress-li-last"><i class="fa fa-suitcase" aria-hidden="true"></i></li>
+</ul>
+<br>
+ <form class="col s12" >
+
+   <div class="row">
+      <div class="input-field col s6">
+       
+       <input id="firstName" type="text" class="validate " required="required">
+       <label for="firstName" data-success="Wow! Thats Cool">First Name</label>
+     </div>
+
+     <div class="input-field col s6">
+       
+       <input id="lastName" type="text" class="validate">
+       <label for="lastName" data-success="Hmmm">Last Name</label>
+     </div>
+   </div>
+   
+   <div class="row">
+     <div class="input-field col s6">
+       <input id="email" type="email" class="validate" required="required">
+       <label for="email" data-error="Nopes! You have done a mistake" data-success="That looks correct !">Email</label>
+     </div>
+     <div class="input-field col s6">
+       <input id="mobileNumber" type="number" class="validate" required="required">
+       <label for="mobileNumber" data-error="Woops! That doesnt seem to be a Mobile No" data-success="Good!">Mobile</label>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="input-field col s6">
+            <input id="address" type="text" class="validate" required="required">
+            <label for="address">House No </label>
+     </div>
+
+     <div class="input-field col s6">
+          
+          <div class="inline">
+            <input id="city" type="text" class="validate" required="required">
+            <label for="city" ></label>
+          </div>
+        </div>
+   </div>
+   
+   <div class="row">
+        
+
+        <div class="input-field col s12 ">
+            <input id="summary" type="text" class="validate" required="required">
+            <label for="summary">Summary for your profile</label>
+      </div>
+    </div>
+     <div class="row">
+        <div class="col s12 center">
+          <input class="btn waves-effect waves-light" ng-click="submitVibrate();validation();submit=!sumbit" value="Next" type="submit" />
+        </div>
+      </div>
+
+ </form>
+
+</div>
+<script>
+$(document).ready(function(){
+  function initialize() {
+      var input = document.getElementById('city');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+  google.maps.event.addDomListener(window, 'load', initialize);
+  // $('.carousel.carousel-slider').carousel({full_width: true,no_wrap:true,indicators:true});
+  
+  var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+
+});
+</script>
+

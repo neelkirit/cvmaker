@@ -1,0 +1,136 @@
+
+<div class="row wrapper" >
+<ul id="progress">
+    
+    <li class=" progress-li"><i class="fa fa-address-card" aria-hidden="true"></i> </li>
+    <li class=" progress-li"> <i class="fa fa-building-o" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-university" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-graduation-cap" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-cubes" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-trophy" aria-hidden="true"></i></li>
+    <li class="active progress-li-last">Jobs</li>
+</ul>
+ <form class="form-area col s12" ng-submit="validation(0)">
+     <br>
+    <div class="row">
+      <div class="col s12 center">
+        <div class="switch" >
+          <label>
+                No Experience
+              <input id="jobSwitch" ng-click="submitVibrate();isJobOn = !isJobOn" ng-checked="isJobOn" type="checkbox">
+              <span class="lever"></span>
+                Add Experience
+          </label>
+        </div>
+      </div>
+    </div>
+   
+
+  <div id="job-section" ng-show="isJobOn" >
+   <div class="row">
+      <div class="input-field col s6">
+       <input id="company" type="text" class="validate" required="required">
+       <label for="company" data-success="Wow! Thats Cool">Company </label>
+     </div>
+
+     <div class="input-field col s6">
+      <input type="checkbox" class="filled-in" id="internship-checkbox" />
+      <label for="internship-checkbox">Internship</label>
+    </div>
+
+     
+   </div>
+
+   <div class="row">
+     <div class="input-field col s6">
+      <select id="startMonth" ng-model="selectedMonth">
+        <!-- <option value="" disabled selected>Choose Month</option> -->
+        <option ng-repeat="month in months" value="{{month}}">{{month}}</option>
+      </select>
+      <label>Start Month</label>
+    </div>
+
+     <div class="input-field col s6">
+      <select id="startYear" ng-model="selectedStartYear" ng-change="startYearSelected()"  ng-options="val for val in getStartYear()" >
+        <!-- <option value="" disabled selected>Choose Year</option> -->
+      </select>
+      <label>Start Year</label>
+    </div>
+   </div>
+
+   <div class="row">
+      <div class="col s11 center">
+        <div class="switch">
+          <label>
+                <strong>Currently Working here </strong>
+              <input id="endDateSwitch" ng-click="submitVibrate();isEndDateOn = !isEndDateOn" ng-checked="isEndDateOn" type="checkbox">
+              <span class="lever"></span>
+                Used to Work here
+          </label>
+        </div>
+    </div>
+    </div>
+    <br>
+
+    <div id="endDate" ng-show="isEndDateOn">
+     <div class="row">
+       <div class="input-field col s6">
+        <select id="endMonth" ng-model="selectedMonth">
+          <!-- <option value="" disabled selected>Choose Month</option> -->
+          <option ng-repeat="month in months" value="{{month}}">{{month}}</option>
+        </select>
+        <label>End Month</label>
+      </div>
+
+       <div class="input-field col s6">
+        <select id="endYear" ng-model="selectedEndYear" ng-options="val for val in getEndYear()" >
+          <!-- <option value="" disabled selected>Choose Year</option> -->
+        </select>
+        <label>End Year</label>
+      </div>
+     </div>
+   </div>
+
+   <div class="row">
+        <div class="col s6">
+          
+          <div class="input-field inline">
+            <input id="city" type="text" class="validate" required="required">
+            <label for="city" >City</label>
+          </div>
+        </div>
+
+        <div class="input-field col s6">
+       <input id="designation" type="text" class="validate" required="required">
+       <label for="designation" data-success="Hmmm">Designation</label>
+     </div>
+    </div>
+
+    <a class=" btn-floating btn-large waves-effect waves-light add-button red" ng-click="submitVibrate();add()" ><i class="material-icons">add</i></a>
+
+   </div>
+
+  
+   <div class="row">
+        <div class="col s12 center">
+          <a class="btn waves-effect waves-light" ng-click="submitVibrate();validation(0);submit=!sumbit" >Next</a>
+        </div>
+      </div>
+
+   
+
+ </form>
+</div>
+
+<script>
+$(document).ready(function(){
+  function initialize() {
+      var input = document.getElementById('city');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+  google.maps.event.addDomListener(window, 'load', initialize);
+});
+</script>
+<!-- <script>
+    window.onbeforeunload = function() { return "You work will be lost."; };
+</script>  -->

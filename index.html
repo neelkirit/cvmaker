@@ -1,0 +1,102 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="theme-color" content="#000" />
+    <link rel="shortcut icon" type="image/png" href="favicon-16x16.png"/>
+	<title>CV Maker</title>
+
+    <!-- TOKEN INPUT -->
+    <link href="css/input_style.css" rel="stylesheet">
+	
+    <!-- CSS DEPENDENCIES CDN -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+	
+	<!-- CUSTOM CSS -->
+	<link href="css/styles.css" rel="stylesheet">
+
+    <!-- SWEET ALERT -->
+    <link rel="stylesheet" href="js/libs/swal/sweetalert.css">
+
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    
+    <style>
+    
+    </style>
+
+</head>
+
+<body>
+    <div class="page" id="page">
+        <main class="cf" ng-view></main>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <!-- Angular Dependecies -->
+    <script src="js/libs/angular/angular.min.js"></script>
+    <script src="js/libs/angular/angular-route.min.js"></script>
+    <script src="js/libs/angular/angular-animate.min.js"></script>
+    <script src="js/libs/angular/angular-cookies.min.js"></script>
+
+    <script src="js/libs/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <!-- <script src="js/libs/ng-cordova.min.js"></script> -->
+
+    <!-- UNDERSCORE JS -->
+    <script src="js/libs/underscore.min.js"></script>
+
+    <!-- TOKEN INPUT -->
+    <script src="js/libs/tokenizer.min.js"></script>
+
+    <!-- SWEET ALERT -->
+    <script src="js/libs/swal/sweetalert.min.js"></script>
+
+    <!-- GOOGLE PLACES API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG09b-eOWzuF85PGvWPCqsBWhpJdwXcKE&libraries=places"></script>
+
+    <!-- APP JS -->
+    <script src="js/app.js"></script>
+    <!-- APP CONTROLLERS -->
+    <script src="js/controllers/HomeController.js"></script>
+    <script src="js/controllers/SchoolController.js"></script>
+    <script src="js/controllers/PreUniversityController.js"></script>
+    <script src="js/controllers/UniversityController.js"></script>
+    <script src="js/controllers/ExtrasController.js"></script>
+    <script src="js/controllers/JobController.js"></script>
+    <script src="js/controllers/AccoladesController.js"></script>
+    <script src="js/controllers/ConfirmDetailsController.js"></script>
+
+    <!-- CUSTOM JS -->
+    <script src="js/commons.js"></script>
+    <!-- SWIPER JS -->
+    <script src="js/libs/swiper.min.js"></script>
+    
+    <!-- PREVENT USER FROM NAVIGATING TO PREVIOUS PAGE -->
+    <script type="text/javascript">
+        // *** Author: Wael Sidawi
+        // ****  Deactive Back Button **** 
+        var history_api = typeof history.pushState !== 'undefined';
+        // history.pushState must be called out side of AngularJS Code
+        if ( history_api ) history.pushState(null, '', '#StayHere');  // After the # you should write something, do not leave it empty
+        document.addEventListener("backbutton", onBackKeyDown, false);
+            function onBackKeyDown(e) {
+              e.preventDefault();
+        }
+        
+    </script>
+    
+</body>
+  
+    
+</html>

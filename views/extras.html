@@ -1,0 +1,118 @@
+
+<div class="row wrapper" >
+<ul id="progress">
+    
+    <li class=" progress-li"><i class="fa fa-address-card" aria-hidden="true"></i> </li>
+    <li class=" progress-li"> <i class="fa fa-building-o" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-university" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-graduation-cap" aria-hidden="true"></i></li>
+    <li class="active progress-li">Extras</li>
+    <li class="progress-li"><i class="fa fa-trophy" aria-hidden="true"></i></li>
+    <li class="progress-li-last"><i class="fa fa-suitcase" aria-hidden="true"></i></li>
+</ul>
+ <form class="col s12 form-area" >
+    <br>
+    <div class="row">
+      <div class="col s12 center">
+        <div class="switch">
+          <label>
+                No Projects
+              <input id="projectSwitch" ng-click="submitVibrate();isProjectOn = !isProjectOn" ng-checked="isProjectOn" type="checkbox">
+              <span class="lever"></span>
+                Add Projects
+          </label>
+        </div>
+      </div>
+    </div>
+
+  <div id="project-section" ng-show="isProjectOn" >
+   <div class="row">
+      <div class="input-field col s6">
+       <input id="project" type="text" class="validate" required="required">
+       <label for="project" data-success="Wow! Thats Cool">Project </label>
+     </div>
+
+     <div class="input-field col s6">
+       <input id="role" type="text" class="validate" required="required">
+       <label for="role" data-success="Hmmm">Role</label>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="input-field col s6">
+      <select id="startMonth" ng-model="selectedMonth">
+        <!-- <option value="" disabled selected>Choose your option</option> -->
+        <option ng-repeat="month in months" value="{{month}}">{{month}}</option>
+      </select>
+      <label>Start Month</label>
+    </div>
+
+     <div class="input-field col s6">
+      <select id="startYear" ng-model="selectedStartYear" ng-change="startYearSelected()"  ng-options="val for val in getStartYear()" >
+        <!-- <option value="" disabled selected>Choose your option</option> -->
+      </select>
+      <label>Start Year</label>
+    </div>
+   </div>
+
+   <div class="row">
+     <div class="input-field col s6">
+      <select id="endMonth" ng-model="selectedMonth">
+        <!-- <option value="" disabled selected>Choose your option</option> -->
+        <option ng-repeat="month in months" value="{{month}}">{{month}}</option>
+      </select>
+      <label>End Month</label>
+    </div>
+
+     <div class="input-field col s6">
+      <select id="endYear" ng-model="selectedEndYear" ng-options="val for val in getEndYear()" >
+        <!-- <option value="" disabled selected>Choose your option</option> -->
+      </select>
+      <label>End Year</label>
+    </div>
+   </div>
+
+   <a class=" btn-floating btn-large waves-effect waves-light add-button red" ng-click="submitVibrate();add()" ><i class="material-icons">add</i></a>
+
+   </div>
+
+   <div class="row">
+      <div class=" col s6">
+       <input id="skills" type="text" lass="validate"  />
+       <label for="skills" class="active" data-success="Wow! Thats Cool"> </label>
+     </div>
+
+     
+   </div>
+
+  
+
+   <div class="row">
+        <div class="col s12 center">
+          <a class="btn waves-effect waves-light" ng-click="submitVibrate();validation(0);submit=!sumbit"  >Next</a>
+        </div>
+      </div>
+
+   
+
+ </form>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#project-section").hide();
+   if($("#isExtra:checked" ))
+   {
+    $("#project-section").show();
+   }
+   else
+   {
+    $("#project-section").show();
+   }
+
+  var tokenInput = $('#skills').tokenizer({label: 'Skills:'});
+});
+</script>
+<!-- <script>
+    window.onbeforeunload = function() { return "You work will be lost."; };
+</script>  -->

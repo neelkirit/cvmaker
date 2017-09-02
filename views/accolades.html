@@ -1,0 +1,83 @@
+
+<div class="row wrapper" >
+<ul id="progress">
+    
+    <li class=" progress-li"><i class="fa fa-address-card" aria-hidden="true"></i> </li>
+    <li class=" progress-li"> <i class="fa fa-building-o" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-university" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-graduation-cap" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-cubes" aria-hidden="true"></i></li>
+    <li class="active progress-li">Awards</li>
+    <li class="progress-li-last"><i class="fa fa-suitcase" aria-hidden="true"></i></li>
+</ul>
+ <form class="col s12 form-area"  ng-submit="validation(0)">
+
+  <br>
+    <div class="row">
+      <div class="col s12 center">
+        <div class="switch">
+          <label>
+                No Awards
+              <input id="accoladeSwitch" ng-click="submitVibrate();isAccoladeOn = !isAccoladeOn" ng-checked="isAccoladeOn" type="checkbox">
+              <span class="lever"></span>
+                Add Awards
+          </label>
+        </div>
+      </div>
+    </div>
+
+  <div id="accolade-section" ng-show="isAccoladeOn" class="">
+   <div class="row">
+      <div class="input-field col s6">
+       <input id="accolade" type="text" class="validate" required="required">
+       <label for="accolade" data-success="Wow! Thats Cool">Award / Accolade</label>
+     </div>
+
+     <div class="input-field col s6">
+       <input id="position" type="text" class="validate" required="required">
+       <label for="position" data-success="Hmmm">Position / Title</label>
+     </div>
+   </div>
+   
+   <div class="row">
+     <div class="input-field col s6">
+      <select id="month" ng-model="selectedMonth">
+        <!-- <option value="" disabled selected>Choose month</option> -->
+        <option ng-repeat="month in months" value="{{month}}">{{month}}</option>
+      </select>
+      <label>Month of Recognition</label>
+    </div>
+
+     <div class="input-field col s6">
+      <select id="year" ng-model="selectedValue" ng-options="val for val in getYear()" >
+        <!-- <option value="" disabled selected>Choose year</option> -->
+      </select>
+      <label>Year of Recognition</label>
+    </div>
+   </div>
+   <a class="btn-floating btn-large waves-effect waves-light add-button red" ng-click="submitVibrate();add()" ><i class="material-icons">add</i></a>
+   </div>
+  
+
+   <div class="row">
+        <div class="col s12 center">
+          <a class="btn waves-effect waves-light" ng-click="submitVibrate();validation(0);submit=!sumbit" >Next</a>
+        </div>
+      </div>
+
+   
+
+ </form>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+});
+</script>
+<!-- <script>
+    window.onbeforeunload = function() { return "You work will be lost."; };
+    </script>  -->

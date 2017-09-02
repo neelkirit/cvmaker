@@ -1,0 +1,403 @@
+
+<br>
+<div class="row ">
+
+<br>
+<div class="col s10 offset-s1 ">
+	<div class="card" id="personal-card">
+    <div class="card-image activator waves-effect waves-block waves-light">
+      Personal<br>Details
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal grey-text text-darken-4">
+      <span class="card-title "><i class="material-icons right">close</i></span>
+      <table>
+
+      <tr><td><p>Summary : </p></td><td>{{candidateDetails.summary}} </td></tr>
+      <tr><td><p>Name : </p></td><td>{{candidateDetails.firstName+" "+candidateDetails.lastName}}</td></tr>
+      <tr><td><p>Mobile : </p></td><td>{{candidateDetails.mobileNumber}}</td></tr>
+      <tr><td><p>Email : </p></td><td>{{candidateDetails.email}}</td></tr>
+      <tr><td><p>Address : </p></td><td>{{candidateDetails.address+" "+candidateDetails.streetAddress}}</td></tr>
+      <tr><td><p>City : </p></td><td>{{candidateDetails.city}}</td></tr>
+      </table>
+      <p class="center"><a class="btn waves-effect waves-light" ng-click="submitVibrate();openModal('personal');" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div id="editpersonal" class="modal">
+    <div class="modal-content ">
+      <h4 class="center">Edit Personal details</h4>
+      
+      <p>
+      <label for="summary">Summary for your profile</label>
+      <input id="summary" type="text" class="validate" value="{{candidateDetails.summary}}" required="required">
+            
+      </p>
+
+
+      <p> 
+      <label for="firstName" >First Name</label>
+      <input id="firstName" type="text" class="validate " value="{{candidateDetails.firstName}}" required="required"> 
+      
+      </p>
+
+      <p> 
+      <label for="lastName" >Last Name</label>
+      <input id="lastName" type="text" value="{{candidateDetails.lastName}}" class="validate"> 
+      
+      </p>
+
+      <p> 
+      <label for="email" >Email</label>
+      <input id="email" type="email" class="validate" value="{{candidateDetails.email}}" required="required"> 
+      
+      </p>
+
+      <p> 
+      <label for="mobileNumber" >Mobile</label>
+      <input id="mobileNumber" type="number" class="validate" value="{{candidateDetails.mobileNumber}}" required="required">
+       
+        </p>
+
+      <p> 
+      <label for="address">House No </label>
+      <input id="address" type="text" class="validate" value="{{candidateDetails.address}}" required="required">
+            
+            </p>
+
+            
+
+            <p>
+             <label for="city" >City</label>
+            <input id="city" type="text" class="validate" value="{{candidateDetails.city}}" required="required">
+           
+            </p>
+
+
+
+    </div>
+    <div class="modal-footer">
+      <a ng-click="update('personal')" class="modal-action modal-close waves-effect waves-green btn-flat">Update</a>
+    </div>
+</div>
+
+<div class="row">
+<div class="col s10 offset-s1 ">
+	<div class="card" id="school-card">
+	    <div class="card-image activator waves-effect waves-block waves-light">
+	      School<br>Details
+	    </div>
+	    <div class="card-content">
+	      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+	      
+	    </div>
+	    <div class="card-reveal grey-text text-darken-4">
+	      <span class="card-title "><i class="material-icons right">close</i></span>
+	      <table>
+	      <tr><td><p>School Name : </p></td><td>{{schoolDetails.schoolName}}</td></tr>
+	      <tr><td><p>Board : </p></td><td>{{schoolDetails.board}}</td></tr>
+	      <tr><td><p>CGPA : </p></td><td>{{schoolDetails.cgpa}}</td></tr>
+	      <tr><td><p>Passing Year : </p></td><td>{{schoolDetails.year}}</td></tr>
+	      </table>
+	      <p class="center"><a class="btn waves-effect waves-light" ng-click="submitVibrate();openModal('school');" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></p>
+	    </div>
+	</div>
+	</div>
+</div>
+
+<div id="editschool" class="modal">
+    <div class="modal-content ">
+      <h4 class="center">Edit School details</h4>
+      
+      <p>
+      <label for="schoolName" >School Name</label>
+      <input id="schoolName" type="text" value="{{schoolDetails.schoolName}}" class="validate" required="required">
+       
+            
+      </p>
+
+
+      <p> 
+      <label for="board" >Board</label> 
+      <input id="board" type="text" value="{{schoolDetails.board}}" class="validate" required="required">
+      
+      
+      </p>
+
+      <p> 
+      <label for="cgpa" >CGPA / Percentage</label>
+      <input id="cgpa" type="number" value="{{schoolDetails.cgpa}}" required="required">
+       
+      </p>
+
+      <p> 
+      <label for="year">Year of Passing</label>
+      <input id="year" type="number" value="{{schoolDetails.year}}" class="validate" required="required">
+      
+      
+      
+      </p>
+
+      
+
+
+
+    </div>
+    <div class="modal-footer">
+      <a ng-click="update('school')" class="modal-action modal-close waves-effect waves-green btn-flat">Update</a>
+    </div>
+</div>
+
+<div class="row">
+<div class="col s10 offset-s1 ">
+	<div class="card" id="preUniversity-card">
+    <div class="card-image activator waves-effect waves-block waves-light">
+      High School<br>Details
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal grey-text text-darken-4">
+	      <span class="card-title "><i class="material-icons right">close</i></span>
+	      <table>
+	      <tr><td><p>Pre University Name : </p></td><td>{{preUnivDetails.collegeName}}</td></tr>
+	      <tr><td><p>Board / University: </p></td><td>{{preUnivDetails.board}}</td></tr>
+	      <tr><td><p>CGPA : </p></td><td>{{preUnivDetails.cgpa}}</td></tr>
+	      <tr><td><p>Passing Year : </p></td><td>{{preUnivDetails.year}}</td></tr>
+	      </table>
+	      <p class="center"><a class="btn waves-effect waves-light" ng-click="submitVibrate();openModal('pu');" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></p>
+	    </div>
+  </div>
+  </div>
+</div>
+
+<div id="editPu" class="modal">
+    <div class="modal-content ">
+      <h4 class="center">Edit Pre University details</h4>
+      
+      <p>
+       <label for="collegeName" >PreUniv / High School </label>
+      <input id="collegeName" type="text" value="{{preUnivDetails.collegeName}}" class="validate" required="required">
+      
+       
+            
+      </p>
+
+
+      <p> 
+      <label for="pboard" >Board</label>
+      <input id="pboard" type="text" value="{{preUnivDetails.board}}" class="validate" required="required">
+       
+      
+      
+      </p>
+
+      <p> 
+       <label for="pcgpa" >CGPA / Percentage</label>
+      <input id="pcgpa" type="number" value="{{preUnivDetails.cgpa}}" required="required">
+      
+       
+      </p>
+
+      <p> 
+      <label for="pyear">Year of Passing</label>
+      <input id="pyear" type="number" value="{{preUnivDetails.year}}" class="validate" required="required">
+      
+      
+      
+      </p>
+
+      
+
+
+
+    </div>
+    <div class="modal-footer">
+      <a ng-click="update('pu')" class="modal-action modal-close waves-effect waves-green btn-flat">Update</a>
+    </div>
+</div>
+
+<div class="row">
+<div class="col s10 offset-s1 ">
+	<div class="card" id="university-card">
+    <div class="card-image activator waves-effect waves-block waves-light">
+      University<br>Details
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal grey-text text-darken-4">
+	      <span class="card-title "><i class="material-icons right">close</i></span>
+	      <div ng-repeat="university in universityList">
+	      <br>
+	      <table>
+		      <tr><td><p>College Name : </p></td><td>{{university.collegeName}}</td></tr>
+		      <tr><td><p>Course : </p></td><td>{{university.course}}</td></tr>
+		      <tr><td><p>Sub Course : </p></td><td>{{university.subCourse}}</td></tr>
+		      <tr><td><p>University : </p></td><td>{{university.university}}</td></tr>
+		      <tr><td><p>CGPA : </p></td><td>{{university.cgpa}}</td></tr>
+		      <tr><td><p>Passing Year : </p></td><td>{{university.year}}</td></tr>
+		    </table>
+
+		    <p class="center">
+		    <a class="btn waves-effect waves-light pink darken-1" ng-click="submitVibrate();removeUniv(university.id);" ><i class="fa fa-times" aria-hidden="true"></i> Remove</a>    
+		    <a class="btn waves-effect waves-light" ng-click="submitVibrate();editUniv(university.id);" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+		    </p>
+
+	      </div>
+	      <br>
+	      <hr>
+	      <p class="center"><a class="btn waves-effect waves-light blue lighten-1" ng-click="submitVibrate();addUniv();" >Add</a></p>
+	      
+	</div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col s10 offset-s1 ">
+	<div class="card" id="extras-card">
+    <div class="card-image activator waves-effect waves-block waves-light">
+      Projects<br>Details
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal grey-text text-darken-4">
+	      <span class="card-title "><i class="material-icons right">close</i></span>
+	      <div ng-repeat="extras in extrasList">
+	      <br>
+	      <table>
+		      <tr><td><p>Project : </p></td><td>{{extras.project}}</td></tr>
+		      <tr><td><p>Role : </p></td><td>{{extras.role}}</td></tr>
+		      <tr><td><p>Start : </p></td><td>{{extras.startMonth+" "+extras.startYear}}</td></tr>
+		      <tr><td><p>End : </p></td><td>{{extras.endMonth+" "+extras.endYear}}</td></tr>
+		  </table>
+		  <p class="center">
+		  <a class="btn waves-effect waves-light pink darken-1" ng-click="submitVibrate();removeProject(extras.id);" ><i class="fa fa-times" aria-hidden="true"></i> Remove</a>  
+		  <a class="btn waves-effect waves-light" ng-click="submitVibrate();editProject(extras.id);" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></p>
+		  
+	      </div>
+	      <hr>
+	      <br>
+	      <p class="center"><a class="btn waves-effect waves-light blue lighten-1" ng-click="submitVibrate();addProject();" >Add</a></p>
+	</div>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col s10 offset-s1 ">
+	<div class="card" id="job-card">
+    <div class="card-image activator waves-effect waves-block waves-light">
+      Skills<br>Details
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal grey-text text-darken-4">
+	      <span class="card-title "><i class="material-icons right">close</i></span>
+	      <table >
+		      <tr ng-repeat="skills in skillsList"><td class="center"><strong>{{skills.skill}}</strong></td>
+		      <td><p class="center">
+		      <a class="btn-floating waves-effect waves-light pink darken-1" ng-click="submitVibrate();removeSkill(skills.id);" ><i class="fa fa-times" aria-hidden="true"></i></a>  
+
+		      <a class="btn-floating waves-effect waves-light" ng-click="submitVibrate();editSkill(skills.id);" ><i class="fa fa-pencil" aria-hidden="true"></i></a></p></td></tr>
+		      
+		      
+	      </table>
+	      <br>
+	      <p class="center"><a class="btn waves-effect waves-light blue lighten-1" ng-click="submitVibrate();addSkill();" >Add</a></p>
+	</div>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col s10 offset-s1 ">
+	<div class="card" id="accolades-card">
+    <div class="card-image activator waves-effect waves-block waves-light">
+      Awards<br>Details
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal grey-text text-darken-4">
+	      <span class="card-title "><i class="material-icons right">close</i></span>
+	      <div ng-repeat="accolades in accoladesList">
+	      <br>
+	      <table>
+		      <tr><td><p>Award : </p></td><td>{{accolades.accolade}}</td></tr>
+		      <tr><td><p>Ttile : </p></td><td>{{accolades.position}}</td></tr>
+		      <tr><td><p>Date : </p></td><td>{{accolades.month+" "+accolades.year}}</td></tr>
+		  </table>
+		  <p class="center">
+		  <a class="btn waves-effect waves-light pink darken-1" ng-click="submitVibrate();removeAwards(accolades.id);" ><i class="fa fa-times" aria-hidden="true"></i> Remove</a>  
+		  <a class="btn waves-effect waves-light" ng-click="submitVibrate();editAwards(accolades.id);" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></p>
+		  
+	      </div>
+	      <br>
+	      <p class="center"><a class="btn waves-effect waves-light blue lighten-1" ng-click="submitVibrate();addAward();" >Add</a></p>
+	</div>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col s10 offset-s1 ">
+	<div class="card" id="job-card">
+    <div class="card-image activator waves-effect waves-block waves-light">
+      Experience<br>Details
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tap to See<i class="material-icons right">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal grey-text text-darken-4">
+	      <span class="card-title "><i class="material-icons right">close</i></span>
+	      <div ng-repeat="job in jobList">
+	      <br>
+	      <table>
+		      <tr><td><p>Company : </p></td><td>{{job.company}}</td></tr>
+		      <tr><td><p>Designation : </p></td><td>{{job.designation}}</td></tr>
+		      <tr><td><p>Start : </p></td><td>{{job.startMonth+" "+job.startYear}}</td></tr>
+		      <tr><td><p>End : </p></td><td>{{job.endMonth+" "+job.endYear}}</td></tr>
+		  </table>
+		  <p class="center">
+		  <a class="btn waves-effect waves-light pink darken-1" ng-click="submitVibrate();removeJob(job.id);" ><i class="fa fa-times" aria-hidden="true"></i> Remove</a>  
+		  <a class="btn waves-effect waves-light" ng-click="submitVibrate();editJob(job.id);" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></p>
+		  
+	      </div>
+	      <br>
+	      <p class="center"><a class="btn waves-effect waves-light blue lighten-1" ng-click="submitVibrate();addJob();" >Add</a></p>
+	</div>
+  </div>
+  </div>
+</div>
+<div class="row">
+        <div class="col s12 center">
+          <a class="btn waves-effect waves-light" ng-click="submitVibrate();validation();isCvGenerated = !isCvGenerated" ng-hide="isCvGenerated" >Generate CV</a>
+          <a class="btn waves-effect waves-light"  ng-click="submitVibrate();fileDownload()" id="download-button"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+          
+          
+          		<!-- <a class="btn waves-effect waves-light" ng-href="http://35.154.66.62:8080/download" ng-href="http://192.168.0.5:8080/download" ng-click="submitVibrate()" id="download-button"><i class="fa fa-download" aria-hidden="true"></i> Download</a> -->
+          
+        </div>
+      </div>
+
+     

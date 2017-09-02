@@ -1,0 +1,76 @@
+
+<div class="row wrapper" ng-repeat="univ in university">
+<ul id="progress">
+    
+    <li class=" progress-li"><i class="fa fa-address-card" aria-hidden="true"></i> </li>
+    <li class=" progress-li"> <i class="fa fa-building-o" aria-hidden="true"></i></li>
+    <li class=" progress-li"><i class="fa fa-university" aria-hidden="true"></i></li>
+    <li class="active progress-li">University</li>
+    <li class="progress-li"><i class="fa fa-cubes" aria-hidden="true"></i></li>
+    <li class="progress-li"><i class="fa fa-trophy" aria-hidden="true"></i></li>
+    <li class="progress-li-last"><i class="fa fa-suitcase" aria-hidden="true"></i></li>
+</ul>
+ <form  class="form-area col s12" >
+
+   <div class="row">
+      <div class="input-field col s6">
+       <input id="collegeName" type="text" class="validate" required="required">
+       <label for="collegeName" data-success="Wow! Thats Cool">College Name</label>
+     </div>
+
+     <div class="input-field col s6">
+       <input id="university" type="text" class="validate" required="required">
+       <label for="university" data-success="Hmmm">University</label>
+     </div>
+   </div>
+
+   <div class="row">
+      <div class="input-field col s6">
+       <input id="course" type="text" class="validate" required="required">
+       <label for="course" data-success="Wow! Thats Cool">Course</label>
+     </div>
+
+     <div class="input-field col s6">
+       <input id="subCourse" type="text" class="validate">
+       <label for="subCourse" data-success="Hmmm">Sub Course</label>
+     </div>
+   </div>
+   
+   <div class="row">
+     <div class="input-field col s6">
+       <input id="cgpa" type="number"  required="required">
+       <label for="cgpa" data-error="Nopes! You have done a mistake" data-success="That looks correct !">CGPA / Percentage</label>
+     </div>
+
+     <div class="input-field col s6">
+      <select id="year" ng-model="selectedValue" ng-options="val for val in getYear()" >
+        <option value="" disabled selected>Choose your option</option>
+      </select>
+      <label>Tentative / Year of Passing</label>
+    </div>
+   </div>
+
+  
+
+   <div class="row">
+        <div class="col s12 center">
+          <a class="btn waves-effect waves-light" ng-click="submitVibrate();validation(0);submit=!sumbit"  >Next</a>
+        </div>
+      </div>
+
+   
+
+ </form>
+</div>
+<a class="btn-floating btn-large waves-effect waves-light add-button red" ng-click="submitVibrate();add()" ><i class="material-icons">add</i></a>
+<script>
+$(document).ready(function(){
+  $('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+});
+</script>
+<!-- <script>
+    window.onbeforeunload = function() { return "You work will be lost."; };
+    </script>  -->
